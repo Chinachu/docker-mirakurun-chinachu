@@ -41,6 +41,7 @@ sudo systemctl disable pcscd.socket
 
 - docker-composeを利用しておりますので、プロジェクトディレクトリ内で下記コマンドを実行してください  
 プロジェクトディレクトリ名はビルド時のレポジトリ名になりますので、適当に短いフォルダ名が推奨です
+
 ### 取得例
 ```
 git clone https://github.com/h-mineta/docker-mirakurun-chinachu.git tvs
