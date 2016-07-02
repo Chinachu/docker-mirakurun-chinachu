@@ -23,6 +23,7 @@ branch: devel-beta
 
 ## 利用方法
 - 最新のdocker & docker-compose がインストール済
+- SELinuxの無効化推奨
 - ホストマシンにPT3 Driverがインストール済
 ```
 $ ls -l /dev/pt*video*
@@ -32,7 +33,7 @@ crw-rw-rw- 1 root video 246, 2 Jun 26 16:07 /dev/pt3video2
 crw-rw-rw- 1 root video 246, 3 Jun 26 16:07 /dev/pt3video3
 ```
 - B-CAS 用に利用するスマートカードリーダーはMirakurunコンテナ内で管理しますので  
-ホストマシン上のpcscdは停止ししてください
+ホストマシン上のpcscdは停止してください
 ```
 sudo systemctl stop pcscd.socket
 sudo systemctl disable pcscd.socket
@@ -41,22 +42,30 @@ sudo systemctl disable pcscd.socket
 - docker-composeを利用しておりますので、プロジェクトディレクトリ内で下記コマンドを実行してください  
 プロジェクトディレクトリ名はビルド時のレポジトリ名になりますので、適当に短いフォルダ名が推奨です
 ### 取得例
-	git clone https://github.com/h-mineta/docker-mirakurun-chinachu.git tvs
-	cd tvs
+```
+git clone https://github.com/h-mineta/docker-mirakurun-chinachu.git tvs
+cd tvs
+```
 ### 起動
-	docker-compose up -d
+```
+docker-compose up -d
+```
 ### 停止
-	docker-compose down
+```
+docker-compose down
+```
 
 ## 設定
 エリア、環境によって変更が必要なファイルは下記の通りとなります
 ### Mirakurun
+- ポート番号 : 36960
 - mirakurun/config/tuners.yml  
 チューナー設定
 - mirakurun/config/channels.yml  
 チャンネル設定
 
 ### Chinachu
+- ポート番号 : 10772
 - chinachu/config/config.json  
 チューナー設定  
 チャンネル設定
