@@ -1,0 +1,26 @@
+version: '2'
+services:
+  mirakurun:
+    build: mirakurun
+    container_name: mirakurun
+    privileged: true
+    ports:
+      - "36960:36960"
+    volumes:
+     - /etc/localtime:/etc/localtime:ro
+     - ./mirakurun/conf:/usr/local/etc/mirakurun
+     - ./mirakurun/db:/usr/local/var/db/mirakurun
+
+  chinachu:
+    build: chinachu
+    container_name: chinachu
+    ports:
+      - "10772:10772"
+    volumes:
+     - /etc/localtime:/etc/localtime:ro
+     - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
+     - ./chinachu/conf/rules.json:/usr/local/chinachu/rules.json
+     - ./chinachu/data:/usr/local/chinachu/data
+     - ./recorded:/usr/local/chinachu/recorded
+    links:
+      - mirakurun:contener-mirakurun

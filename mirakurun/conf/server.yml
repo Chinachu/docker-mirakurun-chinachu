@@ -1,0 +1,6 @@
+path: /var/run/mirakurun.sock
+
+port: 36960
+host: ~
+
+logLevel: 2
