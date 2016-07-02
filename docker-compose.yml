@@ -5,7 +5,7 @@ services:
     container_name: mirakurun
     privileged: true
     ports:
-      - "36960:36960"
+      - "40772:40772"
     volumes:
      - /etc/localtime:/etc/localtime:ro
      - ./mirakurun/conf:/usr/local/etc/mirakurun

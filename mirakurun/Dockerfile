@@ -65,4 +65,4 @@ WORKDIR /usr/local/
 COPY services.sh /usr/local/bin
 
 CMD ["/usr/local/bin/services.sh"]
-EXPOSE 36960
+EXPOSE 40772

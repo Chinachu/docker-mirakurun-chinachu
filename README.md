@@ -59,7 +59,7 @@ docker-compose down
 ## 設定
 エリア、環境によって変更が必要なファイルは下記の通りとなります
 ### Mirakurun
-- ポート番号 : 36960
+- ポート番号 : 40772
 - mirakurun/config/tuners.yml  
 チューナー設定
 - mirakurun/config/channels.yml  
