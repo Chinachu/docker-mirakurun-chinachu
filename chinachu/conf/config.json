@@ -18,7 +18,7 @@
   "wuiFiler"       : true,
   "wuiConfigurator": true,
 
-  "schedulerMirakurunPath": "http://contener-mirakurun:36960/",
+  "schedulerMirakurunPath": "http://container-mirakurun:36960/",
   "schedulerEpgRecordTime": 5,
   "operSchedulerProcessTime" : 5000,
   "operSchedulerIntervalTime" : 600000,
@@ -34,28 +34,28 @@
       "name"        : "PT3-S0-BS",
       "isScrambling": false,
       "types"       : [ "BS","CS" ],
-      "command"     : "/usr/bin/rivarun --mirakurun contener-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
+      "command"     : "/usr/bin/rivarun --mirakurun container-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
       "noEpg"       : false
     },
     {
       "name"        : "PT3-S1-BS",
       "isScrambling": false,
       "types"       : [ "BS","CS" ],
-      "command"     : "/usr/bin/rivarun --mirakurun contener-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
+      "command"     : "/usr/bin/rivarun --mirakurun container-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
       "noEpg"       : false
     },
     {
       "name"        : "PT3-T0",
       "isScrambling": false,
       "types"       : [ "GR" ],
-      "command"     : "/usr/bin/rivarun --mirakurun contener-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
+      "command"     : "/usr/bin/rivarun --mirakurun container-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
       "noEpg"       : false
     },
     {
       "name"        : "PT3-T1",
       "isScrambling": false,
       "types"       : [ "GR" ],
-      "command"     : "/usr/bin/rivarun --mirakurun contener-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
+      "command"     : "/usr/bin/rivarun --mirakurun container-mirakurun:40772 --b25 --priority 10 --sid <sid> --ch <type>/<channel> - -",
       "noEpg"       : false
     }
   ],

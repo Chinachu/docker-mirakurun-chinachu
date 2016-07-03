@@ -23,4 +23,4 @@ services:
      - ./chinachu/data:/usr/local/chinachu/data
      - ./recorded:/usr/local/chinachu/recorded
     links:
-      - mirakurun:contener-mirakurun
+      - mirakurun:container-mirakurun
