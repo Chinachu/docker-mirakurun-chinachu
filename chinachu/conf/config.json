@@ -18,7 +18,7 @@
   "wuiFiler"       : true,
   "wuiConfigurator": true,
 
-  "schedulerMirakurunPath": "http://container-mirakurun:36960/",
+  "schedulerMirakurunPath": "http://container-mirakurun:40772/",
   "schedulerEpgRecordTime": 5,
   "operSchedulerProcessTime" : 5000,
   "operSchedulerIntervalTime" : 600000,
