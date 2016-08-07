@@ -66,13 +66,13 @@
   serviceId: 193
   isDisabled: false
 
-- name: Star channel 2
+- name: Star channel 2,3
   type: BS
   channel: 'BS7_0'
   serviceId: 201
   isDisabled: false
 
-- name: Star channel 3
+- name: Star channel 2,3
   type: BS
   channel: 'BS7_0'
   serviceId: 202
@@ -201,7 +201,49 @@
 - name: ND6
   type: CS
   channel: CS6
+  serviceId: 294
+  isDisabled: false
+
+- name: ND6
+  type: CS
+  channel: CS6
   serviceId: 323
+  isDisabled: false
+
+- name: ND6
+  type: CS
+  channel: CS6
+  serviceId: 329
+  isDisabled: false
+
+- name: ND6
+  type: CS
+  channel: CS6
+  serviceId: 340
+  isDisabled: false
+
+- name: ND6
+  type: CS
+  channel: CS6
+  serviceId: 341
+  isDisabled: false
+
+- name: ND6
+  type: CS
+  channel: CS6
+  serviceId: 354
+  isDisabled: false
+
+- name: ND6
+  type: CS
+  channel: CS6
+  serviceId: 294
+  isDisabled: false
+
+- name: ND12
+  type: CS
+  channel: CS12
+  serviceId: 254
   isDisabled: false
 
 - name: ND12
@@ -210,14 +252,62 @@
   serviceId: 325
   isDisabled: false
 
+- name: ND12
+  type: CS
+  channel: CS12
+  serviceId: 330
+  isDisabled: false
+
+- name: ND16
+  type: CS
+  channel: CS16
+  serviceId: 290
+  isDisabled: false
+
+- name: ND16
+  type: CS
+  channel: CS16
+  serviceId: 305
+  isDisabled: false
+
+- name: ND16
+  type: CS
+  channel: CS16
+  serviceId: 311
+  isDisabled: false
+
 - name: ND16
   type: CS
   channel: CS16
   serviceId: 333
   isDisabled: false
 
+- name: ND16
+  type: CS
+  channel: CS16
+  serviceId: 343
+  isDisabled: false
+
+- name: ND16
+  type: CS
+  channel: CS16
+  serviceId: 353
+  isDisabled: false
+
 - name: ND20
   type: CS
   channel: CS20
   serviceId: 307
+  isDisabled: false
+
+- name: ND20
+  type: CS
+  channel: CS20
+  serviceId: 308
+  isDisabled: false
+
+- name: ND20
+  type: CS
+  channel: CS20
+  serviceId: 309
   isDisabled: false

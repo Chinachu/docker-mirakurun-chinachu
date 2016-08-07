@@ -60,50 +60,5 @@
     }
   ],
 
-  "channels": [
-    { "type": "GR", "channel": "21" },
-    { "type": "GR", "channel": "13" },
-    { "type": "GR", "channel": "20" },
-    { "type": "GR", "channel": "19" },
-    { "type": "GR", "channel": "18" },
-    { "type": "GR", "channel": "22" },
-    { "type": "GR", "channel": "23" },
-    { "type": "GR", "channel": "27" },
-
-    { "type": "BS", "channel": "BS1_0", "sid": "151", "name": "BS Asahi" },
-    { "type": "BS", "channel": "BS1_1", "sid": "161", "name": "BS-TBS" },
-    { "type": "BS", "channel": "BS3_0", "sid": "191", "name": "WOWOW Prime" },
-    { "type": "BS", "channel": "BS3_1", "sid": "171", "name": "BS Japan" },
-    { "type": "BS", "channel": "BS5_0", "sid": "192", "name": "WOWOW Live" },
-    { "type": "BS", "channel": "BS5_1", "sid": "193", "name": "WOWOW Chinema" },
-    { "type": "BS", "channel": "BS7_0", "sid": "201", "name": "Star channel 2" },
-    { "type": "BS", "channel": "BS7_0", "sid": "202", "name": "Star channel 3" },
-    { "type": "BS", "channel": "BS7_1", "sid": "236", "name": "Animax" },
-    { "type": "BS", "channel": "BS7_2", "sid": "256", "name": "Disney" },
-    { "type": "BS", "channel": "BS9_0", "sid": "211", "name": "BS11" },
-    { "type": "BS", "channel": "BS9_1", "sid": "200", "name": "Star channel 1" },
-    { "type": "BS", "channel": "BS9_2", "sid": "222", "name": "TwellV" },
-    { "type": "BS", "channel": "BS11_0", "sid": "238", "name": "FOX" },
-    { "type": "BS", "channel": "BS11_1", "sid": "241", "name": "BS Skyperfect" },
-    { "type": "BS", "channel": "BS13_0", "sid": "141", "name": "BS NIPPON" },
-    { "type": "BS", "channel": "BS13_1", "sid": "181", "name": "BS FUJI" },
-    { "type": "BS", "channel": "BS15_0", "sid": "101", "name": "NHKBS1" },
-    { "type": "BS", "channel": "BS15_1", "sid": "103", "name": "NHKBS Premium" },
-    { "type": "BS", "channel": "BS19_0", "sid": "234", "name": "Green channel" },
-    { "type": "BS", "channel": "BS19_1", "sid": "242", "name": "J SPORTS 1" },
-    { "type": "BS", "channel": "BS19_2", "sid": "243", "name": "J SPORTS 2" },
-    { "type": "BS", "channel": "BS21_0", "sid": "252", "name": "IMAGICA" },
-    { "type": "BS", "channel": "BS21_1", "sid": "244", "name": "J SPORTS 3" },
-    { "type": "BS", "channel": "BS21_2", "sid": "245", "name": "J SPORTS 4" },
-    { "type": "BS", "channel": "BS23_0", "sid": "251", "name": "BS Fishing" },
-    { "type": "BS", "channel": "BS23_1", "sid": "255", "name": "BS Chinema ch" },
-    { "type": "BS", "channel": "BS23_2", "sid": "258", "name": "D-Life" },
-
-    { "type": "CS", "channel": "CS6", "sid": "323", "name": "MTV HD" },
-    { "type": "CS", "channel": "CS12", "sid": "258", "name": "MUSIC ON! TV" },
-    { "type": "CS", "channel": "CS16", "sid": "333", "name": "AT-X" },
-    { "type": "CS", "channel": "CS20", "sid": "307", "name": "Fuji television ONE" },
-    { "type": "CS", "channel": "CS20", "sid": "308", "name": "Fuji television TWO" },
-    { "type": "CS", "channel": "CS20", "sid": "309", "name": "Fuji television NEXT" }
-  ]
+  "channels": []
 }
