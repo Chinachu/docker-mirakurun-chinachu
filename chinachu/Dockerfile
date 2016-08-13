@@ -2,7 +2,7 @@ FROM alpine:3.4
 MAINTAINER h-mineta <h-mineta@0nyx.net>
 
 ARG REPOSITORY="git://github.com/kanreisa/Chinachu.git"
-ARG BRANCH="devel-beta"
+ARG BRANCH="master"
 
 RUN set -x \
 	&& apk upgrade --update \
