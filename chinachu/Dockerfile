@@ -1,6 +1,9 @@
 FROM alpine:3.4
 MAINTAINER h-mineta <h-mineta@0nyx.net>
 
+ARG REPOSITORY="git://github.com/kanreisa/Chinachu.git"
+ARG BRANCH="devel-beta"
+
 RUN set -x \
 	&& apk upgrade --update \
 	&& apk add \
@@ -29,16 +32,11 @@ RUN set -x \
 	\
 	&& adduser -D -u 99 -h /usr/local/chinachu chinachu \
 	&& mkdir -p /usr/local/chinachu \
-	# original
-	#&& git clone git://github.com/kanreisa/Chinachu.git /usr/local/chinachu \
-	# private repository
-	&& git clone git://github.com/h-mineta/Chinachu.git /usr/local/chinachu \
+	&& git clone ${REPOSITORY} /usr/local/chinachu \
+	&& git clone  /usr/local/chinachu \
 	&& chown -R chinachu:chinachu /usr/local/chinachu \
 	&& cd /usr/local/chinachu \
-	# chinachu-beta
-	#&& git checkout devel-beta \
-	# pr-channel-sync
-	&& git checkout pr-channel-sync \
+	&& git checkout ${BRANCH} \
 	&& echo 1 | sudo -u chinachu ./chinachu installer \
 	&& ./chinachu service operator  initscript | sudo -u chinachu tee /tmp/chinachu-operator \
 	&& ./chinachu service wui initscript | sudo -u chinachu tee /tmp/chinachu-wui \
@@ -64,4 +62,4 @@ WORKDIR /usr/local/
 COPY services.sh /usr/local/bin
 
 CMD ["/usr/local/bin/services.sh"]
-EXPOSE 10772
+EXPOSE 10772 5353
