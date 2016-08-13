@@ -12,10 +12,17 @@ services:
      - ./mirakurun/db:/usr/local/var/db/mirakurun
 
   chinachu:
-    build: chinachu
+    build:
+        context: ./chinachu
+        args:
+         - REPOSITORY=git://github.com/h-mineta/Chinachu.git
+         - BRANCH=pr-channel-sync
     container_name: chinachu
     ports:
-      - "10772:10772"
+     - "10772:10772"
+     - "5353:5353/udp"
+    depends_on:
+     - "mirakurun"
     volumes:
      - /etc/localtime:/etc/localtime:ro
      - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
@@ -23,4 +30,4 @@ services:
      - ./chinachu/data:/usr/local/chinachu/data
      - ./recorded:/usr/local/chinachu/recorded
     links:
-      - mirakurun:container-mirakurun
+     - mirakurun:container-mirakurun
