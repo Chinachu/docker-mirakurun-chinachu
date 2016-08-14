@@ -61,7 +61,7 @@ RUN set -x \
 	#&& ln -sf /dev/stdout /usr/local/var/log/mirakurun.stdout-0.log \
 	#&& ln -sf /dev/stderr /usr/local/var/log/mirakurun.stderr-0.log
 
-WORKDIR /usr/local/
+WORKDIR /usr/local
 COPY services.sh /usr/local/bin
 
 CMD ["/usr/local/bin/services.sh"]

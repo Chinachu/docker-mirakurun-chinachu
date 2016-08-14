@@ -1,7 +1,8 @@
 version: '2'
 services:
   mirakurun:
-    build: mirakurun
+    build:
+        context: mirakurun
     container_name: mirakurun
     privileged: true
     ports:
@@ -13,10 +14,10 @@ services:
 
   chinachu:
     build:
-        context: ./chinachu
+        context: chinachu
         args:
-         - REPOSITORY=git://github.com/h-mineta/Chinachu.git
-         - BRANCH=pr-channel-sync
+         - REPOSITORY=git://github.com/kanreisa/Chinachu.git
+         - BRANCH=master
     container_name: chinachu
     ports:
      - "10772:10772"

@@ -58,8 +58,9 @@ RUN set -x \
 	#&& ln -sf /dev/stdout /usr/local/chinachu/log/scheduler \
 	#&& ln -sf /dev/stdout /usr/local/chinachu/log/wui
 
-WORKDIR /usr/local/
+WORKDIR /usr/local/chinachu
 COPY services.sh /usr/local/bin
+COPY config.sample.json /usr/local/chinachu/config.sample.json
 
 CMD ["/usr/local/bin/services.sh"]
 EXPOSE 10772 5353
