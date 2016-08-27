@@ -6,9 +6,12 @@ RUN set -x \
 	&& apk add \
 		bash \
 		'nodejs>=6.2.0' \
+		coreutils \
 		libusb \
 		pcsc-lite \
 		pcsc-lite-libs \
+		curl \
+		ca-certificates \
 	\
 	&& apk add --virtual .build-deps \
 		git \
@@ -16,7 +19,6 @@ RUN set -x \
 		gcc \
 		g++ \
 		gzip \
-		coreutils \
 		autoconf \
 		automake \
 		libc-dev \
@@ -24,6 +26,7 @@ RUN set -x \
 		eudev-dev \
 		libevent-dev \
 		pcsc-lite-dev \
+		libusb-dev \
 	\
 	&& npm install pm2 -g \
 	&& npm install arib-b25-stream-test -g --unsafe \
@@ -45,12 +48,15 @@ RUN set -x \
 	&& make \
 	&& make install \
 	\
-	# alpine edge/testing
-	&& echo 'http://dl-cdn.alpinelinux.org/alpine/edge/testing' >> /etc/apk/repositories \
-	&& apk add --update --virtual .branch-edge-testing \
-		ccid \
+	# ccid
+	&& cd /tmp \
+	&& curl https://alioth.debian.org/frs/download.php/file/4171/ccid-1.4.24.tar.bz2 -o ccid-latest.tar.bz2 \
+	&& tar xvf ccid-*.tar.bz2 \
+	&& cd ccid-* \
+	&& ./configure \
+	&& make \
+	&& make install \
 	\
-	&& sed -i '/alpine\/edge/d' /etc/apk/repositories \
 	# cleaning
 	&& cd / \
 	&& apk del --purge .build-deps \
