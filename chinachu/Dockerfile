@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER h-mineta <h-mineta@0nyx.net>
 
-ARG REPOSITORY="git://github.com/kanreisa/Chinachu.git"
+ARG REPOSITORY="git://github.com/Chinachu/Chinachu.git"
 ARG BRANCH="master"
 
 RUN set -x \
@@ -10,6 +10,8 @@ RUN set -x \
 		bash \
 		'nodejs>=6.2.0' \
 		coreutils \
+		curl \
+		ca-certificates \
 	\
 	&& apk add --virtual .build-deps \
 		git \

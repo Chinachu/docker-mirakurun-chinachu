@@ -16,14 +16,12 @@ services:
     build:
         context: chinachu
         args:
-         - REPOSITORY=git://github.com/kanreisa/Chinachu.git
+         - REPOSITORY=git://github.com/Chinachu/Chinachu.git
          - BRANCH=master
     container_name: chinachu
     ports:
      - "10772:10772"
      - "5353:5353/udp"
-    depends_on:
-     - "mirakurun"
     volumes:
      - /etc/localtime:/etc/localtime:ro
      - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
