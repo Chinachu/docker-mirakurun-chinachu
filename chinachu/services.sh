@@ -22,8 +22,7 @@ do
 done
 
 if [ ${run_countdown} -ge ${countdown_max} ]; then
-	echo "mirakurun is run failed" 1>&2
-	exit 1
+	echo "mirakurun is timeout"
 fi
 
 /etc/init.d/chinachu-operator start
