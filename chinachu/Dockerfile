@@ -11,6 +11,7 @@ RUN set -x \
 		'nodejs>=6.2.0' \
 		coreutils \
 		curl \
+		procps \
 		ca-certificates \
 	\
 	&& apk add --virtual .build-deps \
