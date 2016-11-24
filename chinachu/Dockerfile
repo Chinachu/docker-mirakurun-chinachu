@@ -36,7 +36,6 @@ RUN set -x \
 	&& adduser -D -u 99 -h /usr/local/chinachu chinachu \
 	&& mkdir -p /usr/local/chinachu \
 	&& git clone ${REPOSITORY} /usr/local/chinachu \
-	&& git clone  /usr/local/chinachu \
 	&& chown -R chinachu:chinachu /usr/local/chinachu \
 	&& cd /usr/local/chinachu \
 	&& git checkout ${BRANCH} \
