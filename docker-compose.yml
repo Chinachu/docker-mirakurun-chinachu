@@ -17,7 +17,7 @@ services:
         context: chinachu
         args:
          - REPOSITORY=git://github.com/Chinachu/Chinachu.git
-         - BRANCH=master
+         - BRANCH=gamma
     container_name: chinachu
     ports:
      - "10772:10772"
