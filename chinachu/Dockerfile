@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.5
 MAINTAINER h-mineta <h-mineta@0nyx.net>
 
 ARG REPOSITORY="git://github.com/Chinachu/Chinachu.git"
@@ -63,4 +63,4 @@ COPY services.sh /usr/local/bin
 COPY config.sample.json /usr/local/chinachu/config.sample.json
 
 CMD ["/usr/local/bin/services.sh"]
-EXPOSE 10772 5353
+EXPOSE 10772 20772 5353
