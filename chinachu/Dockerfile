@@ -31,8 +31,6 @@ RUN set -x \
 		eudev-dev \
 		libevent-dev \
 	\
-	&& npm install rivarun -g \
-	\
 	&& adduser -D -u 99 -h /usr/local/chinachu chinachu \
 	&& mkdir -p /usr/local/chinachu \
 	&& git clone ${REPOSITORY} /usr/local/chinachu \
