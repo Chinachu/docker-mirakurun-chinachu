@@ -5,7 +5,7 @@ RUN set -x \
 	&& apk upgrade --update \
 	&& apk add \
 		bash \
-		'nodejs>=6.2.0' \
+		'nodejs>=6.5.0' \
 		coreutils \
 		libusb \
 		pcsc-lite \
@@ -32,7 +32,7 @@ RUN set -x \
 	&& npm install arib-b25-stream-test -g --unsafe \
 	\
 	&& touch /usr/local/bin/update-rc.d ; chmod a+x /usr/local/bin/update-rc.d \
-	&& npm install mirakurun -g --unsafe --production \
+	&& npm install mirakurun@latest -g --unsafe --production \
 	\
 	# recpt1
 	&& git clone https://github.com/stz2012/recpt1 /tmp/recpt1 \
