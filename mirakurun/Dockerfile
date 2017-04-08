@@ -50,7 +50,7 @@ RUN set -x \
 	\
 	# ccid
 	&& cd /tmp \
-	&& curl https://alioth.debian.org/frs/download.php/file/4171/ccid-1.4.24.tar.bz2 -o ccid-latest.tar.bz2 \
+	&& curl -s https://alioth.debian.org/frs/download.php/file/4205/ccid-1.4.26.tar.bz2 -o ccid-latest.tar.bz2 \
 	&& tar xvf ccid-*.tar.bz2 \
 	&& cd ccid-* \
 	&& ./configure \
