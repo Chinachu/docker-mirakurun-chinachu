@@ -21,6 +21,7 @@ services:
     container_name: chinachu
     ports:
      - "10772:10772"
+     - "20772:20772"
      - "5353:5353/udp"
     volumes:
      - /etc/localtime:/etc/localtime:ro

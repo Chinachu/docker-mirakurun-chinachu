@@ -75,7 +75,7 @@ docker-compose down
 チャンネル設定
 
 ### Chinachu
-- ポート番号 : 10772
+- ポート番号 : 10772, 20772(local network only)
 - chinachu/conf/config.json  
 チューナー設定  
 チャンネル設定
