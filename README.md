@@ -3,12 +3,12 @@ Mirakurun と Chinachu をDockerコンテナに閉じ込めました
 
 ## Constitution
 ### Mirakurun
-- Alpine Linux 3.5
+- Alpine Linux 3.6
 - [Mirakurun](https://github.com/kanreisa/Mirakurun)
   - branch: master
 
 ### Chinachu
-- Alpine Linux 3.5
+- Alpine Linux 3.6
 - [Chinachu](https://github.com/kanreisa/Chinachu)
   - branch: gamma
 
@@ -65,6 +65,25 @@ docker-compose up -d
 docker-compose down
 ```
 
+### デーモン化(systemd)
+初期では「WorkingDirectory」が「/usr/local/projects/tvs/」となっています  
+設置した箇所に応じて、書き換えてください
+```shell
+vi mirakurun-chinachu.service
+```
+
+mirakurun-chinachu.serviceをコピーします
+```shell
+sudo cp mirakurun-chinachu.service /usr/lib/systemd/system
+sudo systemctl enable mirakurun-chinachu
+
+# systemdによる起動
+sudo systemctl start mirakurun-chinachu
+
+# systemdによる停止
+sudo systemctl stop mirakurun-chinachu
+```
+
 ## 設定
 エリア、環境によって変更が必要なファイルは下記の通りとなります
 ### Mirakurun
@@ -75,7 +94,7 @@ docker-compose down
 チャンネル設定
 
 ### Chinachu
-- ポート番号 : 10772, 20772(local network only)
+- ポート番号 : 10772, 20772(local network only), 5353/udp(mDNS)
 - chinachu/conf/config.json  
 チューナー設定  
 チャンネル設定
