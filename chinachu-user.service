@@ -1,0 +1,16 @@
+[Unit]
+Description=Chinachu
+Requires=mirakurun-user.service
+After=mirakurun-user.service
+
+[Service]
+Type=simple
+KillMode=none
+RemainAfterExit=yes
+Restart=on-failure
+WorkingDirectory=/usr/local/projects/tvs
+ExecStart=/usr/local/bin/docker-compose up -d chinachu
+ExecStop=/usr/local/bin/docker-compose stop chinacnu
+
+[Install]
+WantedBy=default.target

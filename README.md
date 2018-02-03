@@ -69,19 +69,31 @@ docker-compose down
 初期では「WorkingDirectory」が「/usr/local/projects/tvs/」となっています  
 設置した箇所に応じて、書き換えてください
 ```shell
-vi mirakurun-chinachu.service
+vi mirakurun-user.service
+vi chinachu-user.service
 ```
 
-mirakurun-chinachu.serviceをコピーします
+ユーザ固有サービスとして動かすため、設定します
 ```shell
-sudo cp mirakurun-chinachu.service /usr/lib/systemd/system
-sudo systemctl enable mirakurun-chinachu
+mkdir -p ~/.config/systemd/user/
+mv mirakurun-user.service ~/.config/systemd/user/
+mv chinachu-user.service ~/.config/systemd/user/
+## 永続化(次回OS起動時に自動で起動)
+systemctl --user enable mirakurun-user.service
+systemctl --user enable chinachu-user.service
+sudo loginctl enable-linger `whoami`
 
-# systemdによる起動
-sudo systemctl start mirakurun-chinachu
+# 手動起動
+systemctl --user start mirakurun-user.service
+systemctl --user start chinachu-user.service
 
-# systemdによる停止
-sudo systemctl stop mirakurun-chinachu
+# 動作確認
+systemctl --user status mirakurun-user.service
+systemctl --user status chinachu-user.service
+
+# 手動停止
+systemctl --user stop mirakurun-user.service
+systemctl --user stop chinachu-user.service
 ```
 
 ## 設定
