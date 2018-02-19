@@ -3,7 +3,6 @@ Description=Mirakurun
 
 [Service]
 Type=simple
-KillMode=none
 RemainAfterExit=yes
 Restart=on-failure
 WorkingDirectory=/usr/local/projects/tvs
