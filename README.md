@@ -3,12 +3,12 @@ Mirakurun と Chinachu をDockerコンテナに閉じ込めました
 
 ## Constitution
 ### Mirakurun
-- Alpine Linux 3.6
+- Alpine Linux 3.6(node:8.9-alpine)
 - [Mirakurun](https://github.com/kanreisa/Mirakurun)
   - branch: master
 
 ### Chinachu
-- Alpine Linux 3.6
+- Alpine Linux 3.6(node:8.9-alpine)
 - [Chinachu](https://github.com/kanreisa/Chinachu)
   - branch: gamma
 

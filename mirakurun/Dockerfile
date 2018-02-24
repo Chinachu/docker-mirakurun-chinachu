@@ -1,4 +1,4 @@
-FROM alpine:3.6
+FROM node:8.9-alpine
 LABEL maintainer "h-mineta <h-mineta@0nyx.net>"
 
 ENV DOCKER="YES"
@@ -7,8 +7,6 @@ RUN set -x \
 	&& apk upgrade --update \
 	&& apk add \
 		bash \
-		'nodejs>=6.5.0' \
-		nodejs-npm \
 		coreutils \
 		libusb \
 		pcsc-lite \
@@ -64,17 +62,19 @@ RUN set -x \
 	\
 	# cleaning
 	&& cd / \
-	&& npm cache clean \
+	&& npm cache verify \
 	&& apk del --purge .build-deps \
-	&& rm -rf /tmp/* \
-	&& rm -rf /var/cache/apk/*
-
+	#&& rm -rf /tmp/* \
+	&& rm -rf /tmp/recpt1 \
+	&& rm -rf /tmp/ccid-* \
+	&& rm -rf /var/cache/apk/* 
+	
 	# forward request and error logs to docker log collector
 	#&& ln -sf /dev/stdout /usr/local/var/log/mirakurun.stdout-0.log \
 	#&& ln -sf /dev/stderr /usr/local/var/log/mirakurun.stderr-0.log
 
 COPY services.sh /usr/local/bin
 
-WORKDIR /usr/lib/node_modules/mirakurun
+WORKDIR /usr/local/lib/node_modules/mirakurun
 CMD ["/usr/local/bin/services.sh"]
 EXPOSE 40772
