@@ -42,8 +42,8 @@ RUN set -x \
 	&& cd ${WORK_DIR} \
 	&& git checkout ${BRANCH} \
 	&& echo 1 | sudo -u ${USER_NAME} ./chinachu installer \
-	&& ./chinachu service operator  initscript | sudo -u ${USER_NAME} tee /tmp/chinachu-operator \
-	&& ./chinachu service wui initscript | sudo -u ${USER_NAME} tee /tmp/chinachu-wui \
+	&& sudo -u ${USER_NAME} ./chinachu service operator initscript | tee /tmp/chinachu-operator \
+	&& sudo -u ${USER_NAME} ./chinachu service wui initscript | tee /tmp/chinachu-wui \
 	&& sudo -u ${USER_NAME} mkdir log \
 	\
 	#&& chown root. /tmp/chinachu-operator /tmp/chinachu-wui \
