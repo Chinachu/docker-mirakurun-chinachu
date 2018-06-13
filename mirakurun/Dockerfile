@@ -29,6 +29,8 @@ RUN set -x \
 		libevent-dev \
 		pcsc-lite-dev \
 		libusb-dev \
+		libtool\
+		flex\
 	\
 	&& npm install pm2 -g \
 	\
@@ -53,9 +55,9 @@ RUN set -x \
 	\
 	# ccid
 	&& cd /tmp \
-	&& curl -s https://alioth.debian.org/frs/download.php/file/4205/ccid-1.4.26.tar.bz2 -o ccid-latest.tar.bz2 \
-	&& tar xvf ccid-*.tar.bz2 \
-	&& cd ccid-* \
+	&& git clone --recursive https://salsa.debian.org/rousseau/CCID.git \
+	&& cd CCID \
+	&& ./bootstrap \
 	&& ./configure \
 	&& make \
 	&& make install \
