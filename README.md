@@ -3,13 +3,13 @@ Mirakurun と Chinachu をDockerコンテナに閉じ込めました
 
 ## Constitution
 ### Mirakurun
-- Alpine Linux 3.6(node:8.9-alpine)
-- [Mirakurun](https://github.com/kanreisa/Mirakurun)
+- Alpine Linux 3.8(node:10-alpine)
+- [Mirakurun](https://github.com/Chinachu/Mirakurun)
   - branch: master
 
 ### Chinachu
-- Alpine Linux 3.6(node:8.9-alpine)
-- [Chinachu](https://github.com/kanreisa/Chinachu)
+- Alpine Linux 3.8(node:10-alpine)
+- [Chinachu](https://github.com/Chinachu/Chinachu)
   - branch: gamma
 
 ## 動作確認環境
@@ -19,10 +19,14 @@ Mirakurun と Chinachu をDockerコンテナに閉じ込めました
 >
 >>Fedora release 25 (Twenty Five)  
 >> Linux 4.9.4-201.fc25.x86_64  
+>
+>>Fedora release 27 (Twenty Seven)  
+>> Linux 4.18.12-100.fc27.x86_64  
 
 >Docker
 >>version 1.11.2, build b9f10c9  
 >>version 17.03.0-ce, build 60ccb22  
+>>version 1.13.1, build 9c9378f-unsupported  
 
 >Tuner
 >>ISDB-S, ISDB-T Tuner PT3  
