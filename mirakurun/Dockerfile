@@ -1,4 +1,4 @@
-FROM node:8.9-alpine
+FROM node:10-alpine
 LABEL maintainer "h-mineta <h-mineta@0nyx.net>"
 
 ENV DOCKER="YES"
@@ -69,8 +69,8 @@ RUN set -x \
 	#&& rm -rf /tmp/* \
 	&& rm -rf /tmp/recpt1 \
 	&& rm -rf /tmp/ccid-* \
-	&& rm -rf /var/cache/apk/* 
-	
+	&& rm -rf /var/cache/apk/*
+
 	# forward request and error logs to docker log collector
 	#&& ln -sf /dev/stdout /usr/local/var/log/mirakurun.stdout-0.log \
 	#&& ln -sf /dev/stderr /usr/local/var/log/mirakurun.stderr-0.log
