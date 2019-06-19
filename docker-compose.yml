@@ -11,8 +11,8 @@ services:
      - /etc/localtime:/etc/localtime:ro
      - ./conf/config.json:/usr/local/chinachu/config.json:rw
      - ./conf/rules.json:/usr/local/chinachu/rules.json:rw
-     - ./data:/usr/local/chinachu/data:rw
-     - ./recorded:/usr/local/chinachu/recorded:rw
+     - chinachu_data:/usr/local/chinachu/data:rw
+     - rec_data:/usr/local/chinachu/recorded:rw
   samba:
     image: dperson/samba
     environment:
@@ -31,3 +31,14 @@ services:
     volumes:
       - ./recorded:/recorded
     command: '-n -u "user;badpass" -s "recorded;/recorded;yes;no;no;all;;;description"'
+volumes:
+  rec_data:
+    driver_opts:
+      type: none
+      device: /opt/chinachu/recorded
+      o: bind
+  chinachu_data:
+    driver_opts:
+      type: none
+      device: /opt/chinachu/data
+      o: bind
