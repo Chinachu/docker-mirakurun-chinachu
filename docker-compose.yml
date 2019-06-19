@@ -1,33 +1,33 @@
-version: '2'
+version: '3'
 services:
-  mirakurun:
-    build:
-        context: mirakurun
-    container_name: mirakurun
-    privileged: true
-    ports:
-      - "40772:40772"
-    volumes:
-     - /etc/localtime:/etc/localtime:ro
-     - ./mirakurun/conf:/usr/local/etc/mirakurun
-     - ./mirakurun/db:/usr/local/var/db/mirakurun
-
-  chinachu:
-    build:
-        context: chinachu
-        args:
-         - REPOSITORY=git://github.com/Chinachu/Chinachu.git
-         - BRANCH=gamma
-    container_name: chinachu
+  web:
+    image: yakumosaki/chinachu:latest
+    command: bash -c "cd /usr/local/chinachu; node app-wui.js"
     ports:
      - "10772:10772"
      - "20772:20772"
      - "5353:5353/udp"
     volumes:
      - /etc/localtime:/etc/localtime:ro
-     - ./chinachu/conf/config.json:/usr/local/chinachu/config.json
-     - ./chinachu/conf/rules.json:/usr/local/chinachu/rules.json
-     - ./chinachu/data:/usr/local/chinachu/data
-     - ./recorded:/usr/local/chinachu/recorded
-    links:
-     - mirakurun:container-mirakurun
+     - ./conf/config.json:/usr/local/chinachu/config.json:rw
+     - ./conf/rules.json:/usr/local/chinachu/rules.json:rw
+     - ./data:/usr/local/chinachu/data:rw
+     - ./recorded:/usr/local/chinachu/recorded:rw
+  samba:
+    image: dperson/samba
+    environment:
+      TZ: 'JST'
+    ports:
+      - "137:137/udp"
+      - "138:138/udp"
+      - "139:139"
+      - "445:445"
+    #read_only: true
+    tmpfs:
+      - /tmp
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./recorded:/recorded
+    command: '-n -u "user;badpass" -s "recorded;/recorded;yes;no;no;all;;;description"'
