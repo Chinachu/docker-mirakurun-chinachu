@@ -1,12 +1,21 @@
 version: '3'
 services:
-  web:
+  wui:
     image: yakumosaki/chinachu:latest
     command: bash -c "cd /usr/local/chinachu; node app-wui.js"
     ports:
      - "10772:10772"
      - "20772:20772"
      - "5353:5353/udp"
+    volumes:
+     - /etc/localtime:/etc/localtime:ro
+     - ./conf/config.json:/usr/local/chinachu/config.json:rw
+     - ./conf/rules.json:/usr/local/chinachu/rules.json:rw
+     - chinachu_data:/usr/local/chinachu/data:rw
+     - rec_data:/usr/local/chinachu/recorded:rw
+  operator:
+    image: yakumosaki/chinachu:latest
+    command: bash -c "cd /usr/local/chinachu; node app-operator.js"
     volumes:
      - /etc/localtime:/etc/localtime:ro
      - ./conf/config.json:/usr/local/chinachu/config.json:rw
