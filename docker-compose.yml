@@ -39,7 +39,7 @@ services:
     tty: true
     volumes:
       - rec_data:/recorded
-    command: '-n -u "user;badpass" -s "recorded;/recorded;yes;no;no;all;;;description"'
+    command: '-n -u "user;badpass" -s "recorded;/recorded;yes;no;no;all;user;user;chinachu recorded"'
 volumes:
   rec_data:
     driver_opts:
