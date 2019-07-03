@@ -1,0 +1,6 @@
+!conf/.gitkeep
+!data/.gitkeep
+!recorded/.gitkeep
+conf/*
+data/*
+recorded/*
