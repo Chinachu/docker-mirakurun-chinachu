@@ -35,6 +35,7 @@ RUN set -x \
 		musl-dev \
 		eudev-dev \
 		libevent-dev \
+		perl-utils \
 	\
 	&& mkdir -p ${WORK_DIR} \
 	&& git clone ${REPOSITORY} ${WORK_DIR} \
