@@ -48,7 +48,6 @@ RUN set -x \
 	&& sudo -u ${USER_NAME} ./chinachu service wui initscript | tee /tmp/chinachu-wui \
 	&& sudo -u ${USER_NAME} mkdir log \
 	\
-	#&& chown root. /tmp/chinachu-operator /tmp/chinachu-wui \
 	&& chmod u+x /tmp/chinachu-operator /tmp/chinachu-wui \
 	&& mv /tmp/chinachu-operator /etc/init.d/ \
 	&& mv /tmp/chinachu-wui /etc/init.d/ \
@@ -57,13 +56,7 @@ RUN set -x \
 	&& cd / \
 	&& npm cache verify \
 	&& apk del --purge .build-deps \
-	#&& rm -rf /tmp/* \
 	&& rm -rf /var/cache/apk/*
-
-	# forward request and error logs to docker log collector
-	#&& ln -sf /dev/stdout ${WORK_DIR}/log/operator \
-	#&& ln -sf /dev/stdout ${WORK_DIR}/log/scheduler \
-	#&& ln -sf /dev/stdout ${WORK_DIR}/log/wui
 
 COPY services.sh /usr/local/bin
 COPY config.sample.json ${WORK_DIR}
