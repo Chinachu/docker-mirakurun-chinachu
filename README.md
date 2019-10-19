@@ -22,11 +22,15 @@ Mirakurun と Chinachu をDockerコンテナに閉じ込めました
 >
 >>Fedora release 27 (Twenty Seven)  
 >> Linux 4.18.12-100.fc27.x86_64  
+>
+>>Fedora release 30 (Thirty)  
+>> Linux 5.2.18-200.fc30.x86_64  
 
 >Docker
 >>version 1.11.2, build b9f10c9  
 >>version 17.03.0-ce, build 60ccb22  
 >>version 1.13.1, build 9c9378f-unsupported  
+>>version 1.13.1, build 47e2230/1.13.1  
 
 >Tuner
 >>ISDB-S, ISDB-T Tuner PT3  
@@ -36,7 +40,7 @@ Mirakurun と Chinachu をDockerコンテナに閉じ込めました
 
 ## 利用方法
 - 最新のdocker & docker-compose がインストール済
-- SELinuxの無効化推奨
+- SELinuxの無効化
 - ホストマシンにPT3 Driverがインストール済
 ```
 $ ls -l /dev/pt*video*
