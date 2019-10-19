@@ -42,6 +42,7 @@ RUN set -x \
 	&& chown -R ${USER_NAME} ${WORK_DIR} \
 	&& cd ${WORK_DIR} \
 	&& git checkout ${BRANCH} \
+	&& sudo -u ${USER_NAME} npm config set scripts-prepend-node-path true \
 	&& echo 1 | sudo -u ${USER_NAME} ./chinachu installer \
 	&& sudo -u ${USER_NAME} ./chinachu service operator initscript | tee /tmp/chinachu-operator \
 	&& sudo -u ${USER_NAME} ./chinachu service wui initscript | tee /tmp/chinachu-wui \
