@@ -83,6 +83,9 @@ RUN git clone ${REPOSITORY} ${WORK_DIR} \
 # /usr/local/chinachu/data
 # /usr/local/chinachu/recorded
 
+COPY ./docker-entrypoint.sh /
+RUN chmod +rx /docker-entrypoint.sh
+
 WORKDIR ${WORK_DIR}
 EXPOSE 10772 20772 5353
 
