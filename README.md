@@ -61,7 +61,7 @@ sudo systemctl disable pcscd.socket
 
 ### 取得例
 ```shell
-git clone https://github.com/h-mineta/docker-mirakurun-chinachu.git tvs
+git clone https://github.com/Chinachu/docker-mirakurun-chinachu.git tvs
 cd tvs
 ```
 ### 起動
