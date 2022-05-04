@@ -16,7 +16,7 @@ services:
     build:
         context: chinachu
         args:
-         - REPOSITORY=git://github.com/Chinachu/Chinachu.git
+         - REPOSITORY=https://github.com/Chinachu/Chinachu.git
          - BRANCH=gamma
     container_name: chinachu
     ports:
