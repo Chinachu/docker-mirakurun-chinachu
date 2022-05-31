@@ -2,7 +2,7 @@ FROM node:10-alpine
 LABEL maintainer "h-mineta <h-mineta@0nyx.net>"
 
 ENV DOCKER="YES"
-ARG REPOSITORY="git://github.com/Chinachu/Chinachu.git"
+ARG REPOSITORY="https://github.com/Chinachu/Chinachu.git"
 ARG BRANCH="master"
 
 ARG WORK_DIR="/usr/local/chinachu"
